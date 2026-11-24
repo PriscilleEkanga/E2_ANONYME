@@ -43,8 +43,35 @@ body {
   flex: 1; /* pousse le footer en bas même si la page est courte */
 }
 
-.page-section {
+.page-section,
+.catalog-section {
   padding: 4rem 0;
+  scroll-margin-top: 4rem; /* l'ancre #projets ne passe pas sous le header collant */
+}
+
+/* Alterne le fond des sections pour bien les distinguer */
+.catalog-section:nth-of-type(even) {
+  background: #fff;
+}
+
+.catalog-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.results-count {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.empty-state {
+  padding: 3rem 1rem;
+  text-align: center;
+  color: #64748b;
+  border: 2px dashed var(--wc-border);
+  border-radius: var(--wc-radius);
 }
 
 .container-narrow {
