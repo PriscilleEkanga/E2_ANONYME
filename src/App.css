@@ -1,0 +1,170 @@
+/* =========================================================
+   Styles globaux — WebCraft Solutions
+   Bootstrap fournit la base ; ce fichier ajoute l'identité visuelle.
+   ========================================================= */
+
+:root {
+  --wc-primary: #2563eb;
+  --wc-primary-dark: #1e40af;
+  --wc-accent: #7c3aed;
+  --wc-dark: #0f172a;
+  --wc-surface: #f8fafc;
+  --wc-border: #e2e8f0;
+  --wc-radius: 1rem;
+  --bs-primary: var(--wc-primary);
+  --bs-primary-rgb: 37, 99, 235;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--wc-surface);
+  color: #1e293b;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--wc-primary);
+  --bs-btn-border-color: var(--wc-primary);
+  --bs-btn-hover-bg: var(--wc-primary-dark);
+  --bs-btn-hover-border-color: var(--wc-primary-dark);
+}
+
+/* ---------- Mise en page ---------- */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1; /* pousse le footer en bas même si la page est courte */
+}
+
+.page-section {
+  padding: 4rem 0;
+}
+
+.container-narrow {
+  max-width: 760px;
+}
+
+.section-header {
+  margin-bottom: 2rem;
+}
+
+.section-header h1,
+.section-header h2 {
+  font-weight: 800;
+}
+
+/* ---------- Header / Footer ---------- */
+.site-header {
+  background: var(--wc-dark);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 0.15);
+}
+
+.brand-accent {
+  color: #60a5fa;
+}
+
+.site-header .nav-link.active {
+  color: #fff;
+  border-bottom: 2px solid #60a5fa;
+}
+
+.site-footer {
+  background: var(--wc-dark);
+  color: #cbd5e1;
+}
+
+.site-footer a {
+  color: #cbd5e1;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: #fff;
+}
+
+/* ---------- Hero (animations CSS) ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 0;
+  color: #fff;
+  background: linear-gradient(135deg, var(--wc-dark), var(--wc-primary-dark) 55%, var(--wc-accent));
+  background-size: 200% 200%;
+  animation: gradient-shift 12s ease infinite;
+}
+
+.hero-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.85rem;
+  color: #93c5fd;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  max-width: 800px;
+}
+
+.hero-text {
+  max-width: 620px;
+  font-size: 1.15rem;
+  color: #e2e8f0;
+  margin-bottom: 2rem;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #60a5fa, #c4b5fd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Apparition progressive des textes, décalée grâce aux classes delay-* */
+.fade-up {
+  opacity: 0;
+  animation: fade-up 0.8s ease forwards;
+}
+
+.delay-1 { animation-delay: 0.15s; }
+.delay-2 { animation-delay: 0.3s; }
+.delay-3 { animation-delay: 0.45s; }
+
+/* Cercles décoratifs qui flottent en arrière-plan */
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.08);
+  animation: float 8s ease-in-out infinite;
+}
+
+.shape-1 { width: 320px; height: 320px; top: -80px; right: -60px; }
+.shape-2 { width: 180px; height: 180px; bottom: -40px; right: 25%; animation-delay: -3s; }
+.shape-3 { width: 90px; height: 90px; top: 30%; right: 12%; animation-delay: -5s; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-24px); }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Respecte le réglage « réduire les animations » du système */
+@media (prefers-reduced-motion: reduce) {
+  .hero, .shape, .fade-up { animation: none; opacity: 1; }
+}
