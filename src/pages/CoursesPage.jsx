@@ -1,13 +1,11 @@
-/** Page dédiée à la liste des formations (route "/formations") — contenu à l'étape 8. */
+import CoursesSection from '../components/CoursesSection';
+
+/**
+ * Page dédiée à la liste des formations (route "/formations").
+ * Réutilise la même section que la page d'accueil : aucun code dupliqué.
+ */
 function CoursesPage() {
-  return (
-    <section className="page-section">
-      <div className="container">
-        <h1 className="h2">Toutes nos formations</h1>
-        <p className="text-muted">Page en construction.</p>
-      </div>
-    </section>
-  );
+  return <CoursesSection title="Toutes nos formations" />;
 }
 
 export default CoursesPage;

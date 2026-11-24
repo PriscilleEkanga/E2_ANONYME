@@ -1,13 +1,11 @@
-/** Page dédiée à la liste des projets (route "/projets") — contenu à l'étape 8. */
+import ProjectsSection from '../components/ProjectsSection';
+
+/**
+ * Page dédiée à la liste des projets (route "/projets").
+ * Réutilise la même section que la page d'accueil : aucun code dupliqué.
+ */
 function ProjectsPage() {
-  return (
-    <section className="page-section">
-      <div className="container">
-        <h1 className="h2">Tous nos projets</h1>
-        <p className="text-muted">Page en construction.</p>
-      </div>
-    </section>
-  );
+  return <ProjectsSection title="Tous nos projets" />;
 }
 
 export default ProjectsPage;
