@@ -350,6 +350,13 @@ body {
   font-weight: 600;
 }
 
+/* ---------- Formulaire d'inscription ---------- */
+.inscription-form {
+  padding: 2rem;
+  border: 1px solid var(--wc-border);
+  border-radius: var(--wc-radius);
+}
+
 /* ---------- Modal ---------- */
 .modal-overlay {
   position: fixed;
